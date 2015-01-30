@@ -1,0 +1,21 @@
+<p>
+	<strong>Pickup Location</strong>
+	<%= if @reservation!=nil
+		@reservation.pickup_location
+		end %>
+</p>
+<p>
+	<strong>Pickup Time</strong>
+	<%= if @reservation!=nil
+		@reservation.pickup_time
+		end %>
+</p>
+<p>
+	<strong>Dropoff Time</strong>
+	<%= if @reservation!=nil
+		@reservation.dropoff_time
+		end %>
+</p>
+<%= link_to 'Reviews', reservation_reviews_path(@reservation) %>
+<%= link_to 'Back', reservations_path, :class => 'btn btn-default' %>
+<%= link_to 'Edit', edit_reservation_path(@reservation), :class => 'btn btn-default' %>

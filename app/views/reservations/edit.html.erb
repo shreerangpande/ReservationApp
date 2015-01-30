@@ -1,0 +1,7 @@
+<h1>Editing Reservation</h1>
+ <%= render 'form', post: @reservation %>
+<%= link_to 'Back', reservations_path, :class => 'btn btn-default' %>
+<td><%= link_to 'Destroy', @reservation,
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+</td>

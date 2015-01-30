@@ -1,0 +1,28 @@
+<h1>Listing Reviews</h1>
+
+<table>
+  <tr>
+    <th>Reviewer</th>
+    <th>Review</th>
+    <th>Reservation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reviews.each do |r| %>
+  <tr>
+    <td><%= r.reviewer %></td>
+    <td><%= r.review %></td>
+
+    <td><%= link_to 'Show', [r.reservation, r] %></td>
+    
+    <td><%= link_to 'Edit', edit_reservation_review_path(r.reservation, r)%></td>
+    <td><%= link_to 'Destroy', [r.reservation, r], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New Review', new_reservation_review_path %> 
+<%= link_to 'Back', reservation_path(@review) %>  

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pickup_location: MyString
+  pickup_time: 2015-01-19 19:09:19
+  dropoff_time: 2015-01-19 19:09:19
+
+two:
+  pickup_location: MyString
+  pickup_time: 2015-01-19 19:09:19
+  dropoff_time: 2015-01-19 19:09:19

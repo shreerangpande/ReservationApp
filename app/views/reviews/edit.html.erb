@@ -1,0 +1,8 @@
+<h1>Editing Reviews</h1>
+
+<%= render 'form', post: @review %>
+
+
+<%= link_to 'Show', [@review.reservation, @review] %> |
+<!-- /posts/:post_id/comments/ -->
+<%= link_to 'Back', reservation_reviews_path(@review.reservation) %>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReservationProject</title>
+   <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background: #A1234G">
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= value %>
+    </div>
+<% end %>
+
+<%if current_user%>
+	<%=current_user.email %> <%= link_to 'Logout', destroy_user_session_path, method: :delete,:class => 'btn btn-primary' %>
+<%else %>
+	<%= link_to 'Login', new_user_session_path, :class => 'btn btn-primary' %>
+<%end%>
+
+<%= yield %>
+
+</body>
+</html>

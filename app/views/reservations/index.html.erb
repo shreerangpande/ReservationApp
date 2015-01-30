@@ -1,0 +1,27 @@
+<h1>Listing Reservations</h1>
+ 
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Pickup Time</th>
+    <th>Dropoff Time</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @reservations.each do |reservation| %>
+    <tr>
+      <td><%= reservation.pickup_location %></td>
+      <td><%= reservation.pickup_time %></td>
+      <td><%= reservation.dropoff_time %></td>
+      
+      <td><%= link_to 'Show', reservation_path(reservation), :class => 'btn btn-default' %></td>
+      
+      <td><%= link_to 'Edit', edit_reservation_path(reservation), :class => 'btn btn-default' %></td>
+      
+      <td><%= link_to 'Destroy', reservation_path(reservation),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New Reservation', new_reservation_path, :class => 'btn btn-default' %>
